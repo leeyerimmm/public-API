@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYR공공API활용</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/weather.js"></script>
+  <script defer src="./js/calendar.js"></script>
+  <script defer src="./js/todo.js"></script>
+  <script defer src="./js/info.js"></script>
+  <script defer src="./js/alarm.js"></script>
+  <script defer src="./js/slide.js"></script>
+  <script defer src="./js/login.js"></script>
+
+</head>
+<body>
+  <div id="login">
+    <form autocomplete="off">
+      <label for="username">닉네임을 입력해주세요</label>
+      <input type="text" name="username" id="username" autofocus maxlength="6" required>
+      <button type="submit">등록</button>
+    </form>
+  </div>
+
+  <div id="wrap">
+    <header>
+      <div class="container">
+        <h1><a href="#" class="logo"><i class="fas fa-seedling"></i>&nbsp;주말농장&nbsp;<i class="fas fa-seedling"></i></a></h1>
+        <div class="search-container">
+          <input type="text" placeholder="검색어를 입력해주세요">
+          <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+  
+    <main>
+      <div class="sidebar">
+        <i class="fas fa-user-circle"></i>
+        <p>
+          <span class="user"></span>님, <br>오늘도 주말농장과 함께 <br>행복농사하세요♥
+        </p>
+        <button id="delete-account">회원탈퇴</button>
+        <ul>
+          <li class="on"><a href="#section1"><i class="on fas fa-sun"></i>날&nbsp;&nbsp;씨</a></li>
+          <li><a href="#section2"><i class="fas fa-calendar-check"></i>캘린더</a></li>
+          <li><a href="#section3"><i class="fas fa-leaf"></i>새싹톡</a></li>
+          <li><a href="#section4"><i class="fas fa-bell"></i>정보</a></li>
+        </ul>
+      </div>
+      <section class="content">
+        <h2 class="sr-only">주요내용</h2>
+        <section class="weather"  id="section1">
+          <h3 class="sr-only">날씨</h3>
+          <article class="myLocation">
+            <h3>나의 위치</h3>
+            <h3><span class="city">Seoul</span></h3>
+            <div class="current">
+              <div class="current-weather">
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+                <h4>21.79</h4>
+                <h5>Clouds</h5>
+              </div>
+              <div class="weatherItem">
+                <div class="wind">
+                  <h4>바람</h4>
+                  <i class="fas fa-wind"></i>
+                  <h5 class="wind-speed">1.54 m/s, 250°</h5>
+                </div>
+                <div class="humidity">
+                  <h4>습도</h4>
+                  <i class="fas fa-tint"></i>
+                  <h5 class="humidity-value">50%</h5>
+                </div>
+                <div class="precipitation">
+                  <h4>강수량</h4>
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                  <h5 class="precipitation-value">0 mm</h5>
+                </div>
+                <div class="cloud">
+                  <h4>구름량</h4>
+                  <i class="fas fa-cloud"></i>
+                  <h5 class="cloud-value">20%</h5>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="hourly">
+            <h3 class="sr-only">시간별예보</h3>
+            <div class="hourly-forecast">
+              <div>
+                <h4>18:00</h4>
+                <h4>24.86°C</h4>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+              </div>
+              <div>
+                <h4>21:00</h4>
+                <h4>24.18°C</h4>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+              </div>
+              <div>
+                <h4>00:00</h4>
+                <h4>23.5°C</h4>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+              </div>
+              <div>
+                <h4>03:00</h4>
+                <h4>23.06°C</h4>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+              </div>
+              <div>
+                <h4>06:00</h4>
+                <h4>23.23°C</h4>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Cloud" class="weather-icon">
+              </div>
+            </div>
+          </article>
+        
+        </section>
+        <section class="calendar" id="section2">
+          <h3>캘린더</h3>
+          <article class="calendar-container">
+            <h3 class="sr-only">달력</h3>
+            <div class="calendar-header">
+              <button class="prev-month">&lt;</button>
+              <div class="current-month">July 2023</div>
+              <button class="next-month">&gt;</button>
+            </div>
+            <div class="calendar-body">
+              <div class="day-names">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="days">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+              </div>
+            </div>
+          </article>
+          <article class="todo">
+            <h3 class="sr-only">할일목록</h3>
+            <div class="inputBox">
+              <form name="frmTodoAdd" class="on" autocapitalize="off">
+                <label for="addTask" class="sr-only">할일</label>
+                <input type="text" name="addTask" id="addTask" placeholder="메모를 입력해주세요">
+              </form>
+              <form name="frmTodoEdit">
+                <label for="editTask" class="sr-only">할일</label>
+                <input type="text" name="editTask" id="editTask" placeholder="메모를 입력해주세요">
+              </form>
+            </div>          
+            <ul class="list">
+              <li id="0">
+                <i class="insert fas fa-check-square"></i>
+                <i class="fas fa-edit"></i>
+                <i class="del fas fa-times-circle"></i>
+              </li>
+            </ul>
+          </article>
+        </section>
+        <section class="community"  id="section3">
+          <h3 class="sr-only">새싹톡</h3>
+          <article class="talk-popular">
+            <div class="icon-container">
+            <h3>최신글</h3>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            </div>
+            <ul>
+              <li><a href="#">1. 주말농사 성공 비결: 초보자를 위한 팁 드릴게요!</a></li>
+              <li><a href="#">2. 가족과 함께한 텃밭 체험 기록 ♥아이들이 너무 좋아했어요♥</a></li>
+              <li><a href="#">3. 직접 기른 채소로 우리 집 반찬 만들어봤어요~!</a></li>
+              <li><a href="#">4. 자연과 가까워지니 힐링 받는 기분이네요^^</a></li>
+              <li><a href="#">5. 방울토마토 이렇게 키우는 게 맞는 건가요? 회원님들 성공 경험담 공유해 주세요ㅜㅜ</a></li>
+            </ul>
+          </article>
+          <article class="talk-notice">
+            <h3>공지</h3>
+            <ul>
+              <li><a href="#">[필독] 새싹톡 이용시 꼭 읽어주세요</a></li>
+              <li><a href="#">[필독] 가입절차 설명서</a></li>
+            </ul>
+          </article>
+          <article class="talk-latest">
+            <h3>이벤트</h3>
+            <ul>
+              <li><a href="#">경기도 양평에서 열리는 녹색 주말 축제를 떠나볼까~?</a></li>
+              <li><a href="#">아이들과 함께하는 즐거운 텃밭 탐험이 있다고?!?!?</a></li>
+              <li><a href="#">수확의 기쁨을 주말농장 소셜커뮤니티에 올리면 선물이 펑펑~!</a></li>
+            </ul>
+          </article>
+        </section>
+        <section class="info"  id="section4" >
+          <h3 class="sr-only">정보</h3>
+          <article class="suggestion">
+            <h3>작물추천</h3>
+            <i class="fas fa-sync-alt" id="refresh-crop"></i>
+              <div class="suggestion_con">
+                <div class="image"></div>
+                <div class="description"></div>
+            </div>
+          </article>
+          <article class="alarm">
+            <h3>알림판</h3>
+            <div class="slider-container">
+                <ul class="slider">
+                    <li><a href="#"><img src="./images/alarm-1.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/alarm-2.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/alarm-3.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/alarm-4.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/alarm-5.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/alarm-6.png" alt=""></a></li>
+                </ul>
+            </div>
+            <a href="#" class="prev">
+              <img src="./images/prev.svg" alt="이전">
+          </a>
+          <a href="#" class="next">
+              <img src="./images/next.svg" alt="다음">
+          </a>
+        </article>
+        
+        </section>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

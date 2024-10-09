@@ -1,0 +1,945 @@
+@charset "UTF-8";
+#login {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#login > form {
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  border: 3px solid #929292;
+}
+#login > form > label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  display: block;
+}
+#login > form > input[type=text] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: #abc270;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  background: none;
+  border: none;
+  outline: none;
+}
+#login > form > button {
+  background-color: #abc270;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 800;
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+#login > form > button:hover {
+  background-color: #96b34c;
+}
+
+.show-login #login {
+  display: flex;
+}
+
+.show-login main,
+.show-login header {
+  filter: blur(10px);
+}
+
+.alert-box {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #abc270;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 10001;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+#wrap header {
+  background-color: #abc270;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#wrap header .container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#wrap header .container h1 {
+  margin: 0;
+}
+#wrap header .container h1 a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#wrap header .container .search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#wrap header .container .search-container input[type=text] {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  box-sizing: border-box;
+}
+#wrap header .container .search-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+#wrap main {
+  display: flex;
+  flex: 1;
+}
+#wrap main .sidebar {
+  min-width: 200px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 70px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#wrap main .sidebar i {
+  margin-top: 20px;
+  font-size: 120px;
+  color: #abc270;
+}
+#wrap main .sidebar p {
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 400;
+}
+#wrap main .sidebar p .user {
+  color: #abc270;
+  font-weight: 500;
+  font-size: 23px;
+}
+#wrap main .sidebar button {
+  margin-bottom: 20px;
+  padding: 6px;
+  border: none;
+  border-radius: 3px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+#wrap main .sidebar button:hover {
+  background-color: #6b6a6a;
+}
+#wrap main .sidebar ul {
+  width: 100%;
+}
+#wrap main .sidebar ul li {
+  border-bottom: 1px solid #d1cece;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+#wrap main .sidebar ul li.on, #wrap main .sidebar ul li:hover {
+  background-color: #fff;
+}
+#wrap main .sidebar ul li a {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#wrap main .sidebar ul li a i {
+  font-size: 25px;
+  color: #fec868;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+#wrap main .sidebar ul li a i.on {
+  color: #abc270;
+}
+#wrap main .sidebar ul li a i:hover {
+  color: #abc270;
+}
+#wrap main .content {
+  flex: 1;
+  margin-top: 70px;
+  height: calc(100vh - 90px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#wrap main .content .weather .myLocation h3 {
+  padding: 10px 0 10px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+  font-size: 24px;
+}
+#wrap main .content .weather .myLocation h3 .city {
+  color: #f79148;
+  font-weight: 600;
+  font-size: 28px;
+}
+#wrap main .content .weather .myLocation .current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 20px;
+}
+#wrap main .content .weather .myLocation .current .current-weather {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+#wrap main .content .weather .myLocation .current .current-weather:hover {
+  transform: scale(1.05);
+}
+#wrap main .content .weather .myLocation .current .current-weather img {
+  width: 150px;
+  height: 150px;
+}
+#wrap main .content .weather .myLocation .current .current-weather h4 {
+  font-size: 24px;
+  color: #333;
+}
+#wrap main .content .weather .myLocation .current .current-weather h5 {
+  padding-bottom: 50px;
+  font-size: 20px;
+  color: #333;
+}
+#wrap main .content .weather .myLocation .current .weatherItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+#wrap main .content .weather .myLocation .current .weatherItem .wind,
+#wrap main .content .weather .myLocation .current .weatherItem .humidity,
+#wrap main .content .weather .myLocation .current .weatherItem .precipitation,
+#wrap main .content .weather .myLocation .current .weatherItem .cloud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  padding: 10px 25px 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+#wrap main .content .weather .myLocation .current .weatherItem .wind:hover,
+#wrap main .content .weather .myLocation .current .weatherItem .humidity:hover,
+#wrap main .content .weather .myLocation .current .weatherItem .precipitation:hover,
+#wrap main .content .weather .myLocation .current .weatherItem .cloud:hover {
+  transform: scale(1.05);
+}
+#wrap main .content .weather .myLocation .current .weatherItem .wind h4,
+#wrap main .content .weather .myLocation .current .weatherItem .humidity h4,
+#wrap main .content .weather .myLocation .current .weatherItem .precipitation h4,
+#wrap main .content .weather .myLocation .current .weatherItem .cloud h4 {
+  font-size: 18px;
+  color: #333;
+}
+#wrap main .content .weather .myLocation .current .weatherItem .wind i,
+#wrap main .content .weather .myLocation .current .weatherItem .humidity i,
+#wrap main .content .weather .myLocation .current .weatherItem .precipitation i,
+#wrap main .content .weather .myLocation .current .weatherItem .cloud i {
+  font-size: 40px;
+  max-width: 50px;
+  margin: 20px;
+  color: #9fbbdf;
+}
+#wrap main .content .weather .myLocation .current .weatherItem .wind h5,
+#wrap main .content .weather .myLocation .current .weatherItem .humidity h5,
+#wrap main .content .weather .myLocation .current .weatherItem .precipitation h5,
+#wrap main .content .weather .myLocation .current .weatherItem .cloud h5 {
+  font-size: 15px;
+  color: #333;
+}
+#wrap main .content .weather .hourly {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 248);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+#wrap main .content .weather .hourly .hourly-forecast {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+#wrap main .content .weather .hourly .hourly-forecast > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 90%;
+  height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+#wrap main .content .weather .hourly .hourly-forecast > div:hover {
+  transform: scale(1.05);
+}
+#wrap main .content .weather .hourly .hourly-forecast > div h4 {
+  font-size: 18px;
+  color: #333;
+}
+#wrap main .content .weather .hourly .hourly-forecast > div img {
+  width: 100px;
+  height: 100px;
+}
+#wrap main .content .calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgb(255, 255, 248);
+  border-radius: 10px;
+}
+#wrap main .content .calendar h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+#wrap main .content .calendar .calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  border: 1px solid #e2e2e2;
+  border-top: none;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+#wrap main .content .calendar .calendar-container .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #abc270;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+#wrap main .content .calendar .calendar-container .calendar-header .prev-month,
+#wrap main .content .calendar .calendar-container .calendar-header .next-month {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+#wrap main .content .calendar .calendar-container .calendar-header .current-month {
+  font-size: 23px;
+  font-weight: 600;
+}
+#wrap main .content .calendar .calendar-container .calendar-body {
+  width: 100%;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .day-names {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #f79148;
+  color: #fff;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #e2e2e2;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .days > div {
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .days > div:hover {
+  background-color: #fdf6ac;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .days .current-day {
+  background-color: #fdf6ac;
+  font-weight: 600;
+  border: 2px solid #FFCC00;
+  box-sizing: border-box;
+}
+#wrap main .content .calendar .calendar-container .calendar-body .days .selected-date {
+  background-color: #f8f3de;
+  font-weight: 500;
+}
+#wrap main .content .calendar .todo {
+  width: 100%;
+  background-color: #fcffdd;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+#wrap main .content .calendar .todo .inputBox {
+  position: relative;
+  width: 90%;
+  height: 48px;
+  margin: 0 auto;
+}
+#wrap main .content .calendar .todo .inputBox > form {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+#wrap main .content .calendar .todo .inputBox > form.on {
+  display: flex;
+}
+#wrap main .content .calendar .todo .inputBox > form > input {
+  flex: 1 1 0;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 2px solid #f79148;
+  outline: none;
+}
+#wrap main .content .calendar .todo > .list {
+  overflow: auto;
+  width: 90%;
+  height: 300px;
+  margin: 24px auto 0;
+}
+#wrap main .content .calendar .todo > .list > li {
+  display: flex;
+  align-items: center;
+}
+#wrap main .content .calendar .todo > .list > li:last-child {
+  margin-bottom: 0;
+}
+#wrap main .content .calendar .todo > .list > li > i {
+  color: #f79148;
+  font-size: 18px;
+}
+#wrap main .content .calendar .todo > .list > li > i.del {
+  margin-left: 10px;
+}
+#wrap main .content .calendar .todo > .list > li > i:hover {
+  color: #d05c09;
+  cursor: pointer;
+}
+#wrap main .content .calendar .todo > .list > li > h3 {
+  flex: 1 1 0;
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  padding-top: 15px;
+  text-align: center;
+}
+#wrap main .content .calendar .todo > .list > li > h3.complete {
+  -webkit-text-decoration: line-through #f79148;
+          text-decoration: line-through #f79148;
+}
+#wrap main .content .community {
+  width: 100%;
+  color: #333;
+  padding: 30px 0 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+#wrap main .content .community > h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 500;
+}
+#wrap main .content .community > .talk-popular h3,
+#wrap main .content .community .talk-latest h3,
+#wrap main .content .community .talk-notice h3 {
+  color: #f79148;
+  font-size: 1.8em;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#wrap main .content .community .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+#wrap main .content .community .icon-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#wrap main .content .community .icon-container a:hover {
+  background-color: #f79148;
+}
+#wrap main .content .community .icon-container a i {
+  font-size: 18px;
+}
+#wrap main .content .community .talk-popular,
+#wrap main .content .community .talk-notice,
+#wrap main .content .community .talk-latest {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 248);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-left: 7px solid #f79148;
+}
+#wrap main .content .community .talk-popular ul li,
+#wrap main .content .community .talk-notice ul li,
+#wrap main .content .community .talk-latest ul li {
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 40px;
+  position: relative;
+}
+#wrap main .content .community .talk-popular ul li a,
+#wrap main .content .community .talk-notice ul li a,
+#wrap main .content .community .talk-latest ul li a {
+  color: #333;
+  display: block;
+  padding: 5px 0;
+}
+#wrap main .content .community .talk-popular ul li a:hover,
+#wrap main .content .community .talk-notice ul li a:hover,
+#wrap main .content .community .talk-latest ul li a:hover {
+  color: #f79148;
+  text-decoration: underline;
+}
+#wrap main .content .community .talk-popular ul li::before,
+#wrap main .content .community .talk-notice ul li::before,
+#wrap main .content .community .talk-latest ul li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #abc270;
+  border-radius: 50%;
+}
+#wrap main .content .info {
+  width: 90%;
+  margin: 0 auto 100px;
+}
+#wrap main .content .info .suggestion {
+  margin-bottom: 50px;
+  position: relative;
+}
+#wrap main .content .info .suggestion > h3 {
+  padding-top: 30px;
+  margin-bottom: -20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+#wrap main .content .info .suggestion > #refresh-crop {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+#wrap main .content .info .suggestion > #refresh-crop:hover, #wrap main .content .info .suggestion > #refresh-crop:active {
+  color: #abc270;
+}
+#wrap main .content .info .suggestion > .suggestion_con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#wrap main .content .info .suggestion > .suggestion_con > .image {
+  flex: 0 0 30%;
+}
+#wrap main .content .info .suggestion > .suggestion_con > .image > img {
+  width: 300px;
+  height: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+#wrap main .content .info .suggestion > .suggestion_con > .description {
+  flex: 0 0 50%;
+  margin-left: 40px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #fcffdd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+#wrap main .content .info .suggestion > .suggestion_con > .description > h4 {
+  padding-bottom: 10px;
+  color: #f79148;
+  font-size: 20px;
+}
+#wrap main .content .info .suggestion > .suggestion_con > .description > p {
+  line-height: 1.7;
+}
+#wrap main .content .info .alarm {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#wrap main .content .info .alarm > h3 {
+  padding-top: 30px;
+  margin-bottom: -20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+#wrap main .content .info .alarm .slider-container {
+  width: 90%;
+  margin: 50px auto;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#wrap main .content .info .alarm .slider {
+  text-align: center;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+#wrap main .content .info .alarm .slider > li {
+  min-width: 400px;
+  box-sizing: border-box;
+}
+#wrap main .content .info .alarm .slider > li > a > img {
+  width: 330px;
+  height: 250px;
+}
+#wrap main .content .info .alarm .prev,
+#wrap main .content .info .alarm .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wrap main .content .info .alarm .prev {
+  left: 20px;
+  top: 60%;
+}
+#wrap main .content .info .alarm .next {
+  right: 0px;
+  top: 60%;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+  header .container {
+    justify-content: center;
+    width: 100%;
+  }
+  header .container .search-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .container .search-container input[type=text] {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin: 0;
+  }
+  main {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  main .sidebar {
+    width: 100%;
+  }
+  main .sidebar button {
+    margin-bottom: 10px;
+  }
+  main .sidebar ul {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+  }
+  main .sidebar ul li {
+    background-color: inherit !important;
+  }
+  main .sidebar ul li a {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  main .content {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  main .content .weather {
+    width: 100%;
+  }
+  main .content .weather .myLocation h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  main .content .weather .myLocation h3 .city {
+    font-size: 24px;
+  }
+  main .content .weather .myLocation .current {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .content .weather .myLocation .current .current-weather img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+  }
+  main .content .weather .myLocation .current .current-weather h4 {
+    font-size: 20px;
+  }
+  main .content .weather .myLocation .current .current-weather h5 {
+    font-size: 16px;
+  }
+  main .content .weather .myLocation .current .weatherItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+  }
+  main .content .weather .myLocation .current .weatherItem .wind,
+  main .content .weather .myLocation .current .weatherItem .humidity,
+  main .content .weather .myLocation .current .weatherItem .precipitation,
+  main .content .weather .myLocation .current .weatherItem .cloud {
+    padding: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+  }
+  main .content .weather .myLocation .current .weatherItem .wind h4,
+  main .content .weather .myLocation .current .weatherItem .humidity h4,
+  main .content .weather .myLocation .current .weatherItem .precipitation h4,
+  main .content .weather .myLocation .current .weatherItem .cloud h4 {
+    font-size: 16px;
+  }
+  main .content .weather .myLocation .current .weatherItem .wind i,
+  main .content .weather .myLocation .current .weatherItem .humidity i,
+  main .content .weather .myLocation .current .weatherItem .precipitation i,
+  main .content .weather .myLocation .current .weatherItem .cloud i {
+    font-size: 30px;
+  }
+  main .content .weather .myLocation .current .weatherItem .wind h5,
+  main .content .weather .myLocation .current .weatherItem .humidity h5,
+  main .content .weather .myLocation .current .weatherItem .precipitation h5,
+  main .content .weather .myLocation .current .weatherItem .cloud h5 {
+    font-size: 14px;
+  }
+  main .content .weather .hourly {
+    width: 100%;
+  }
+  main .content .weather .hourly h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  main .content .weather .hourly .hourly-forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    overflow-x: hidden;
+  }
+  main .content .weather .hourly .hourly-forecast > div {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    transition: none;
+    transform: none;
+  }
+  main .content .calendar .calendar-container {
+    width: 97%;
+  }
+  main .content .community .icon-container a {
+    margin-right: 10px;
+  }
+  main .content .community .talk-popular > h3,
+  main .content .community .talk-notice > h3,
+  main .content .community .talk-latest > h3 {
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+  main .content .community .talk-popular ul li,
+  main .content .community .talk-notice ul li,
+  main .content .community .talk-latest ul li {
+    margin: 0;
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+  main .content .community .talk-popular ul li a,
+  main .content .community .talk-notice ul li a,
+  main .content .community .talk-latest ul li a {
+    width: 390px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  main .content .info > .suggestion > h3 {
+    font-weight: 500;
+  }
+  main .content .info > .suggestion > .suggestion_con {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .content .info > .suggestion > .suggestion_con > .image {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+  main .content .info > .suggestion > .suggestion_con > .image > img {
+    width: 100%;
+    max-width: 300px;
+  }
+  main .content .info > .suggestion > .suggestion_con > .description {
+    flex: 0 0 auto;
+    margin-left: 0;
+    margin-right: 40px;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+    background-color: #fcffdd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  main .content .info > .suggestion > .suggestion_con > .description > h4 {
+    text-align: center;
+  }
+  main .content .info > .alarm {
+    margin-bottom: 130px;
+  }
+  main .content .info > .alarm > h3 {
+    text-align: center;
+  }
+  main .content .info > .alarm > .slider {
+    min-width: 100px;
+  }
+  main .content .info > .alarm .prev {
+    top: 60%;
+  }
+  main .content .info > .alarm .next {
+    top: 60%;
+  }
+}/*# sourceMappingURL=style.css.map */

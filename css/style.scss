@@ -1,0 +1,1112 @@
+$pointColor: #abc270;
+$secColor: #fec868;
+$thirdColor: #f79148;
+$priColor: #333;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin controlReset {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+#login {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  > form {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    border: 3px solid #929292;
+
+    > label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    > input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      color: $pointColor;
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+      @include controlReset;
+    }
+
+    > button {
+      background-color: $pointColor;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 800;
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    > button:hover {
+      background-color: darken($pointColor, 10%);
+    }
+  }
+}
+
+.show-login #login {
+  display: flex;
+}
+
+.show-login main,
+.show-login header {
+  filter: blur(10px);
+}
+
+  .alert-box {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $pointColor;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10001;
+  }
+
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: hidden;
+
+  header {
+    background-color: $pointColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      overflow:hidden;
+
+      h1 {
+        margin: 0;
+
+        a {
+          display: block;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        input[type="text"] {
+          width: 300px;
+          padding: 10px;
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          box-sizing: border-box;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: gray;
+        }
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    flex: 1;
+
+    .sidebar {
+      min-width: 200px;
+      background-color: #f4f4f4;
+      padding: 10px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+      position: relative;
+      top: 70px;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        margin-top: 20px;
+        font-size: 120px;
+        color: $pointColor;
+      }
+
+      p {
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.6;
+        font-weight: 400;
+
+        .user {
+          color: #abc270;
+          font-weight: 500;
+          font-size: 23px;
+        }
+      }
+
+      button {
+        margin-bottom: 20px;
+        padding: 6px;
+        border: none;
+        border-radius: 3px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #6b6a6a;
+        }
+      }
+
+      ul {
+        width: 100%;
+        li {
+          border-bottom: 1px solid #d1cece;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: 400;
+
+          &.on,
+          &:hover {
+            background-color: #fff;
+          }
+
+          a {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            i {
+              font-size: 25px;
+              color: $secColor;
+              margin-right: 10px;
+              margin-bottom: 10px;
+
+              &.on {
+                color: $pointColor;
+              }
+            
+              &:hover {
+                color: $pointColor;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      flex: 1;
+      margin-top: 70px;
+
+      height: calc(100vh - 90px);
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .weather {
+        .myLocation {
+          h3 {
+            padding: 10px 0 10px;
+            text-align: center;
+            color: $priColor;
+            font-weight: 500;
+            font-size: 24px;
+
+            .city {
+              color: $thirdColor;
+              font-weight: 600;
+              font-size: 28px;
+            }
+          }
+
+          .current {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding-top: 20px;
+
+            .current-weather {
+              border: 2px solid #ccc;
+              border-radius: 50%;
+              width: 280px;
+              height: 280px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              box-sizing: border-box;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s;
+
+              &:hover {
+                transform: scale(1.05);
+              }
+
+              img {
+                width: 150px;
+                height: 150px;
+              }
+
+              h4 {
+                font-size: 24px;
+                color: $priColor;
+              }
+
+              h5 {
+                padding-bottom: 50px;
+                font-size: 20px;
+                color: $priColor;
+              }
+            }
+
+            .weatherItem {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              gap: 10px;
+
+              .wind,
+              .humidity,
+              .precipitation,
+              .cloud {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #ccc;
+                padding: 10px 25px 10px;
+                text-align: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+
+                &:hover {
+                  transform: scale(1.05);
+                }
+
+                h4 {
+                  font-size: 18px;
+                  color: $priColor;
+                }
+
+                i {
+                  font-size: 40px;
+                  max-width: 50px;
+                  margin: 20px;
+                  color: #9fbbdf;
+                }
+
+                h5 {
+                  font-size: 15px;
+                  color: $priColor;
+                }
+              }
+            }
+          }
+        }
+
+        .hourly {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 30px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          background-color: rgb(255, 255, 248);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          overflow: hidden;
+
+          .hourly-forecast {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+
+            > div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 20px;
+              width: 90%;
+              height: 150px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              background-color: #fff;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              transition: transform 0.3s;
+
+              &:hover {
+                transform: scale(1.05);
+              }
+
+              h4 {
+                font-size: 18px;
+                color: $priColor;
+              }
+
+              img {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+        }
+      }
+
+      .calendar {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: rgb(255, 255, 248);
+        border-radius: 10px;
+ 
+        h3 {
+          margin-bottom: 20px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 24px;
+        }
+
+        .calendar-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 50px;
+          border: 1px solid #e2e2e2;
+          border-top: none;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            background-color: $pointColor;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+
+            .prev-month,
+            .next-month {
+              background: none;
+              border: none;
+              color: #fff;
+              font-size: 20px;
+              cursor: pointer;
+            }
+
+            .current-month {
+              font-size: 23px;
+              font-weight: 600;
+            }
+          }
+
+          .calendar-body {
+            width: 100%;
+
+            .day-names {
+              display: grid;
+              grid-template-columns: repeat(7, 1fr);
+              background-color: $thirdColor;
+              color: #fff;
+              padding: 10px 0;
+              font-weight: 500;
+              font-size: 15px;
+              text-align: center;
+            }
+
+            .days {
+              display: grid;
+              grid-template-columns: repeat(7, 1fr);
+              gap: 1px;
+              background-color: #e2e2e2;
+
+              > div {
+                background-color: #fff;
+                padding: 15px;
+                text-align: center;
+                font-size: 15px;
+                font-weight: 400;
+                cursor: pointer;
+                box-sizing: border-box;
+
+                &:hover {
+                  background-color: #fdf6ac;
+                }
+              }
+
+              .current-day {
+                background-color: #fdf6ac;
+                font-weight: 600;
+                border: 2px solid #FFCC00;
+                box-sizing: border-box;
+              }
+
+              .selected-date {
+                background-color: #f8f3de;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        .todo {
+          width: 100%;
+          background-color: #fcffdd;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
+          .inputBox {
+            position: relative;
+            width: 90%;
+            height: 48px;
+            margin: 0 auto;
+
+            > form {
+              &.on {
+                display: flex;
+              }
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              padding: 10px 0;
+
+              > input {
+                flex: 1 1 0;
+                padding: 12px;
+                font-size: 16px;
+                text-align: center;
+                border-bottom: 2px solid $thirdColor;
+                outline: none;
+              }
+            }
+          }
+
+          > .list {
+            overflow: auto;
+            width: 90%;
+            height: 300px;
+            margin: 24px auto 0;
+
+            > li {
+              display: flex;
+              align-items: center;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              > i {
+                color: $thirdColor;
+                font-size: 18px;
+
+                &.del {
+                  margin-left: 10px;
+                }
+
+                &:hover {
+                  color: darken($thirdColor, 20%);
+                  cursor: pointer;
+                }
+              }
+
+              > h3 {
+                flex: 1 1 0;
+                padding: 0 10px;
+                font-weight: 500;
+                font-size: 20px;
+                display: flex;
+                padding-top: 15px;
+                text-align: center;
+
+                &.complete {
+                  text-decoration: line-through $thirdColor;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .community {
+        width: 100%;
+        color: $priColor;
+        padding: 30px 0 60px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+
+        > h3 {
+          margin-bottom: 20px;
+          text-align: center;
+          font-size: 1.8em;
+          font-weight: 500;
+        }
+
+        > .talk-popular,
+        .talk-latest,
+        .talk-notice {
+          h3 {
+            color: $thirdColor;
+            font-size: 1.8em;
+            margin-left: 20px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .icon-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 10px;
+          margin-right: 10px;
+
+          a {
+            @include flexCenter;
+            font-size: 18px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: $thirdColor;
+            }
+
+            i {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .talk-popular,
+        .talk-notice,
+        .talk-latest {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 10px;
+          margin-top: 20px;
+          border-radius: 30px;
+          background-color: rgb(255, 255, 248);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-left: 7px solid $thirdColor;
+
+          ul {
+
+            li {
+              margin: 10px 0;
+              font-weight: 500;
+              font-size: 16px;
+              padding-left: 40px;
+              position: relative;
+
+              a {
+                color: $priColor;
+                display: block;
+                padding: 5px 0;
+
+                &:hover {
+                  color: $thirdColor;
+                  text-decoration: underline;
+                }
+              }
+
+              &::before {
+                content: "";
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                background-color: $pointColor;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+
+      .info {
+        width: 90%;
+        margin: 0 auto 100px;
+
+        .suggestion {
+          margin-bottom: 50px;
+          position: relative;
+
+          > h3 {
+            padding-top: 30px;
+            margin-bottom: -20px;
+            color: $priColor;
+            font-size: 24px;
+            font-weight: 600;
+          }
+
+         >#refresh-crop {
+            position: absolute;
+            top: 50px; 
+            right: 10px; 
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            transition: transform 0.3s ease;
+
+            &:hover,
+            &:active{
+              color: $pointColor;
+            }
+          }
+
+          > .suggestion_con {
+            @include flexCenter();
+            margin-top: 50px;
+
+            > .image {
+              flex: 0 0 30%;
+
+              > img {
+                width: 300px;
+                height: 250px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+              }
+            }
+
+            > .description {
+              flex: 0 0 50%;
+              margin-left: 40px;
+              padding: 15px;
+              font-size: 15px;
+              font-weight: 500;
+              line-height: 1.5;
+              background-color: #fcffdd;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+              > h4 {
+                padding-bottom: 10px;
+                color: $thirdColor;
+                font-size: 20px;
+              }
+
+              > p {
+                line-height: 1.7;
+              }
+            }
+          }
+        }
+
+        .alarm {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+
+          > h3 {
+            padding-top: 30px;
+            margin-bottom: -20px;
+            color: $priColor;
+            font-size: 24px;
+            font-weight: 600;
+          }
+
+          .slider-container {
+            width: 90%;
+            margin: 50px auto;
+            margin-bottom: 0;
+            overflow: hidden;
+          }
+
+          .slider {
+            text-align: center;
+            display: flex;
+            transition: transform 0.5s ease;
+
+            > li {
+              min-width: 400px;
+              box-sizing: border-box;
+
+              > a {
+                > img {
+                  width: 330px;
+                  height: 250px;
+                }
+              }
+            }
+          }
+
+          .prev,
+          .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .prev {
+            left: 20px;
+            top: 60%;
+          }
+
+          .next {
+            right: 0px;
+            top: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 500px) {
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    height: 70px;
+    padding: 10px 0;
+
+    .container {
+      justify-content: center;
+      width: 100%;
+
+      .search-container {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+
+        input[type="text"] {
+          width: calc(100% - 40px);
+          padding: 8px;
+          margin: 0;
+        }
+      }//.search-container
+    }//.container
+  }//header
+
+
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    
+    
+
+.sidebar {
+  width: 100%;
+
+  button {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+
+    li {
+      background-color: inherit !important;
+
+      a {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+    .content {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      overflow-y: auto;
+   
+
+      .weather {
+        width: 100%;
+
+        .myLocation {
+
+          h3 {
+            margin-top: 10px;
+            font-size: 20px;
+            
+
+            .city {
+              font-size: 24px;
+            }
+          }
+
+          .current {
+            flex-direction: column;
+            align-items: center;
+
+            .current-weather {
+
+              img {
+                width: 100%;
+                height: auto;
+                max-width: 150px;
+              }
+              h4 {
+                font-size: 20px;
+              }
+              h5 {
+                font-size: 16px;
+              }
+            }
+
+            .weatherItem {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              margin: 20px 0;
+
+              .wind,
+              .humidity,
+              .precipitation,
+              .cloud {
+                padding: 10px 0;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                h4 {
+                  font-size: 16px;
+                }
+                i {
+                  font-size: 30px;
+                }
+                h5 {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+
+        .hourly {
+          width: 100%;
+
+          h3 {
+            margin-top: 10px;
+            font-size: 20px;
+          }
+
+          .hourly-forecast {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            overflow-x: hidden; 
+
+            > div {
+              width: 90%;
+              padding: 10px;
+              margin: 5px 0;
+              transition: none ;
+              transform: none ;
+            }//div
+          }//.hourly-forecast
+        }//.hourly
+      }// .weather
+
+      .calendar {
+        .calendar-container {
+          width: 97%;
+        }// .calendar-container
+      }//calendar
+
+      
+      .community{
+      .icon-container a {
+        margin-right: 10px; 
+      }
+    
+      .talk-popular,
+      .talk-notice,
+      .talk-latest {
+
+        >h3{
+          text-align-last: left;
+        }
+          
+        ul {
+          li {
+            margin: 0; 
+            text-align-last: left;
+
+            a {
+              width: 390px;
+              white-space: nowrap;
+              overflow: hidden; 
+              text-overflow: ellipsis; 
+            }
+          }
+        }
+      }
+    }
+
+    .info{
+      
+        >.suggestion{
+
+          >h3{
+            font-weight: 500;
+          }
+
+          >.suggestion_con{
+            flex-direction: column;
+            align-items: center;
+
+            > .image {
+              flex: 0 0 auto;
+              margin-bottom: 20px;
+        
+              > img {
+                width: 100%;
+                max-width: 300px;
+              }
+            }
+
+            > .description {
+
+              flex: 0 0 auto;
+              margin-left: 0;
+              margin-right: 40px;
+              width: 100%;
+              padding: 15px;
+              font-size: 15px;
+              font-weight: 500;
+              line-height: 1.5;
+              text-align: left;
+              background-color: #fcffdd;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+              
+              >h4{
+                text-align: center;
+              }
+            }
+          }
+        }//.suggestion
+
+        >.alarm{
+          margin-bottom: 130px;
+
+          >h3{
+            text-align: center;
+          }
+
+
+        >.slider{
+          min-width: 100px;
+        }
+
+        .prev {
+          top: 60%;
+        
+        }
+      
+        .next {
+          top: 60%;
+
+        }
+
+        }
+      }//.info
+    }//content
+  }//main
+}//mobile 
