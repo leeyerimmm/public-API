@@ -113,7 +113,7 @@ http://43.200.231.9/
 | 페이지 이름        | 설명                                                                 | 스크린샷                    |
 |-----------------|----------------------------------------------------------------|---------------------------|
 | 메인 페이지       | 모바일 인터페이스에 맞춘 레이아웃과 손쉬운 메뉴 접근 기능을 제공합니다.  | ![Main App Page](gitimages/user_app.png)  |
-| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather App Page](gitimages/weather01_app.png) ![Weather App Page 2](gitimages/weather02_app.png) |
+| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather App Page](gitimages/weather01_app.png)|
 | 캘린더 페이지     | 일정 관리 기능을 모바일에서도 사용할 수 있습니다. | ![Calendar App Page](gitimages/calendar_app.png) |
 | 새싹톡 커뮤니티 페이지 | 커뮤니티 활동을 모바일에서도 쉽게 사용할 수 있습니다. | ![Community App Page](gitimages/community_app.png) |
 | 작물 추천 및 알림판 페이지 | 사용자가 재배할 수 있는 작물을 추천하고, 알림판을 통해 농사 관리에 필요한 정보를 제공합니다. | ![Info App Page](gitimages/info01_app.png) ![Info App Page 2](gitimages/info02_app.png) |
