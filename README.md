@@ -1,4 +1,4 @@
-# Weekend Farm ☘️  
+# Weekend Farm 🌱
 주말 농장 반응형 웹 사이트 
 
 
@@ -48,37 +48,24 @@
 <br><br>
 
 
-## 5. Project Structure (프로젝트 구조)
+## 4. Project Structure (프로젝트 구조)
 
 ```
-Happypotato/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── board/          # 게시판 관련 Java 클래스
-│   │   │   ├── Controls/       # 펀딩, 캠페인 관련 Java 클래스
-│   │   │   ├── donation/       # 기부 관련 Java 클래스
-│   │   │   └── join/           # 회원가입 관련 Java 클래스
-│   │   ├── webapp/
-│   │       ├── admin/          # 관리자 페이지 관련 파일
-│   │       ├── css/            # 스타일시트 파일 (CSS)
-│   │       ├── font/           # 폰트 파일
-│   │       ├── images/         # 이미지 파일들
-│   │       ├── join/           # 회원가입 관련 파일
-│   │       ├── js/             # JavaScript 파일들
-│   │       ├── my/             # 사용자 관련 파일
-│   │       ├── payment/        # 결제 관련 JSP 파일
-│   │       ├── sql/            # SQL 쿼리 파일
-│   │       ├── sub/            # 서브 페이지 관련 JSP 파일
-│   │       │   ├── campaign/   # 캠페인 관련 파일
-│   │       │   ├── donation/   # 기부 관련 파일
-│   │       │   ├── funding/    # 펀딩 관련 파일
-│   │       │   ├── fundrasing/ # 모금함 관련 파일
-│   │       │   └── notice/     # 공지사항 관련 파일
-│   │       ├── views/          # 여러 페이지에서 공통으로 사용되는 템플릿 파일
-│   │       ├── WEB-INF/        # 웹 애플리케이션의 설정 및 보안 파일들
-│   │       └── index.jsp       # 메인 페이지 파일
-└── README.md                   # 프로젝트 설명 파일
+WeekendFarm/
+├── css/                     # 스타일시트 파일 (CSS)
+├── images/                  # 이미지 파일
+├── js/                      # JavaScript 파일들
+│   ├── alarm.js             # 알림판 관련 JS 파일
+│   ├── calendar.js          # 캘린더 관련 JS 파일
+│   ├── info.js              # 작물추천 관련 JS 파일
+│   ├── login.js             # 로그인 관련 JS 파일
+│   ├── slide.js             # 슬라이드 관련 JS 파일
+│   ├── todo.js              # 할 일 목록 관련 JS 파일
+│   ├── weather.js           # 날씨 관련 JS 파일
+├── index.html               # 메인 HTML 파일
+├── README.md                # 프로젝트 설명 파일
+└── NeedsStatement.pptx      # 프로젝트 요구사항 설명 파일 (PPT)
+
 
 ```
 
@@ -86,7 +73,7 @@ Happypotato/
 
 <br><br>
 
-## 6. Tech Stack (기술 스택)
+## 5. Tech Stack (기술 스택)
 
 ### Frontend
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -94,19 +81,13 @@ Happypotato/
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### Backend
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
-![JSP](https://img.shields.io/badge/JSP-007396?style=for-the-badge&logo=java&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 ### Tools
-![Eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Apache Tomcat](https://img.shields.io/badge/Tomcat-F8DC75?style=for-the-badge&logo=apache-tomcat&logoColor=black)
 
 <br><br>
 
-## 7. Site Introduction (사이트 소개)
+## 6. Site Introduction (사이트 소개)
 <br>
 
 ### 7-1. Default Page (기본 페이지)
