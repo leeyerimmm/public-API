@@ -95,22 +95,24 @@ WeekendFarm/
 
 | 페이지 이름        | 설명                                                                 | 스크린샷                    |
 |-----------------|----------------------------------------------------------------|---------------------------|
-| 메인 페이지       | 좌측 메뉴를 통해 주요 기능에 쉽게 접근할 수 있습니다: 날씨 정보, 캘린더, 새싹톡, 정보 등.  | ![Main Page](path/to/user_web.png)  |
-| 새싹톡 커뮤니티 페이지 | 최신글, 공지사항, 이벤트 섹션이 있으며, 커뮤니티 활동을 통해 사용자들이 정보를 공유할 수 있습니다. | ![Community Page](path/to/community_web.png) |
-| 작물 추천 및 알림판 페이지 | 사용자가 재배할 수 있는 작물을 추천하고, 알림판을 통해 농사 관리에 필요한 정보를 제공합니다. | ![Info Page](path/to/info_web.png) |
-| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather Page](path/to/weather_web.png) |
-| 캘린더 페이지     | 주간/월간 일정 관리를 통해 사용자가 농장 일정을 관리할 수 있습니다. | ![Calendar Page](path/to/calendar_web.png) |
+| 메인 페이지       | 좌측 메뉴를 통해 주요 기능에 쉽게 접근할 수 있습니다: 날씨 정보, 캘린더, 새싹톡, 정보 등.  | ![Main Page](gitimages/user_web.png)  |
+| 새싹톡 커뮤니티 페이지 | 최신글, 공지사항, 이벤트 섹션이 있으며, 커뮤니티 활동을 통해 사용자들이 정보를 공유할 수 있습니다. | ![Community Page](gitimages/community_web.png) |
+| 작물 추천 및 알림판 페이지 | 사용자가 재배할 수 있는 작물을 추천하고, 알림판을 통해 농사 관리에 필요한 정보를 제공합니다. | ![Info Page](gitimages/info_web.png) |
+| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather Page](gitimages/weather_web.png) |
+| 캘린더 페이지     | 주간/월간 일정 관리를 통해 사용자가 농장 일정을 관리할 수 있습니다. | ![Calendar Page](gitimages/calendar_web.png) |
+
+
 
 ## 6-2. App Version
 앱 버전에서는 사용자가 주말농장을 모바일 기기를 통해 언제 어디서나 쉽게 관리하고 정보를 확인할 수 있습니다. 각 페이지는 모바일 환경에 최적화되어 있습니다.
 
 | 페이지 이름        | 설명                                                                 | 스크린샷                    |
 |-----------------|----------------------------------------------------------------|---------------------------|
-| 메인 페이지       | 모바일 인터페이스에 맞춘 레이아웃과 손쉬운 메뉴 접근 기능을 제공합니다.  | ![Main App Page](path/to/user_app.png)  |
-| 새싹톡 커뮤니티 페이지 | 커뮤니티 활동을 모바일에서도 쉽게 사용할 수 있습니다. | ![Community App Page](path/to/community_app.png) |
-| 작물 추천 및 알림판 페이지 | 사용자가 재배할 수 있는 작물을 추천하고, 알림판을 통해 농사 관리에 필요한 정보를 제공합니다. | ![Info App Page](path/to/info01_app.png) ![Info App Page 2](path/to/info02_app.png) |
-| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather App Page](path/to/weather01_app.png) ![Weather App Page 2](path/to/weather02_app.png) |
-| 캘린더 페이지     | 일정 관리 기능을 모바일에서도 사용할 수 있습니다. | ![Calendar App Page](path/to/calendar_app.png) |
+| 메인 페이지       | 모바일 인터페이스에 맞춘 레이아웃과 손쉬운 메뉴 접근 기능을 제공합니다.  | ![Main App Page](gitimages/user_app.png)  |
+| 새싹톡 커뮤니티 페이지 | 커뮤니티 활동을 모바일에서도 쉽게 사용할 수 있습니다. | ![Community App Page](gitimages/community_app.png) |
+| 작물 추천 및 알림판 페이지 | 사용자가 재배할 수 있는 작물을 추천하고, 알림판을 통해 농사 관리에 필요한 정보를 제공합니다. | ![Info App Page](gitimages/info01_app.png) ![Info App Page 2](gitimages/info02_app.png) |
+| 날씨 정보 페이지   | 현재 사용자의 위치를 기반으로 날씨 정보를 제공합니다. 풍속, 습도, 강수량, 구름량 등의 상세 정보를 확인할 수 있습니다. | ![Weather App Page](gitimages/weather01_app.png) ![Weather App Page 2](gitimages/weather02_app.png) |
+| 캘린더 페이지     | 일정 관리 기능을 모바일에서도 사용할 수 있습니다. | ![Calendar App Page](gitimages/calendar_app.png) |
 
 
 
